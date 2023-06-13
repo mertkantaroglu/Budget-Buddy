@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <h2><%= @category.name %></h2>
+  <h3><img src=<%= @category.icon %> /></h3>
+  <%= link_to "Back", categories_path %>
+  <br>
+
+  <%= button_to "Delete this category", @category, method: :delete %>
+</div>
