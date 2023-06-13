@@ -1,0 +1,20 @@
+<h1>New Category</h1>
+
+<div>
+  <%= form_with model: @category, url: categories_path do |form| %>
+    <div>
+      <%= form.text_field :name, autofocus: true, placeholder: 'Enter category name' %>
+      <%= form.text_field :icon, autofocus: true, placeholder: 'Enter icon URL'%>
+    </div>
+
+    <div>
+      <%= form.submit 'Save' %>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <%= link_to "Back", categories_path %>
+</div>

@@ -1,0 +1,16 @@
+<h1>Categories</h1>
+
+<div id="categories">
+  <% if @categories.empty?%>
+    <h3>No Category Available</h3>
+  <% else %>
+    <% @categories.each do |category| %>
+      <h2><%= link_to category.name, category_path(category.id)%></h2>
+      <h3><img src=<%= category.icon %> /></h3>
+      <%= button_to 'Delete', category, method: :delete, data: { turbo: false } %>
+    <% end %>
+  </div>
+<%end %>
+<br>
+<%= link_to "Add New Category", new_category_path %>
+<%= render partial: 'shared/logout'%>
