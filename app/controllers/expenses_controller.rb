@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
         category = Category.find(params[:expense][:category_id])
         @expense.categories << category
 
-        format.html { redirect_to category_path(id: params[:category_id]), notice: 'Expense created successfully.' }
+        format.html { redirect_to category_path(id: params[:category_id])}
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
