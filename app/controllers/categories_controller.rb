@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category)}
+        format.html { redirect_to category_url(@category) }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.destroy
-        format.html { redirect_to categories_url, notice: "Category was successfully deleted." }
+        format.html { redirect_to categories_url, notice: 'Category was successfully deleted.' }
         format.json { head :no_content }
       else
         format.html { render :new, alert: 'An error has occured while deleting category' }
@@ -52,8 +52,8 @@ class CategoriesController < ApplicationController
 
   private
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :icon)
-    end
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end

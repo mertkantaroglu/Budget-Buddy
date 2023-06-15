@@ -1,17 +1,21 @@
-<h1>Categories</h1>
+<%= render partial: 'shared/navbar', locals: { title: 'Categories'} %>
 
-<div id="categories">
+<div id="categories" class="">
   <% if @categories.empty?%>
-    <h3>No Category Available</h3>
+    <h3 class='no-cat text-center fw-bold'>No Category Available</h3>
   <% else %>
     <% @categories.each do |category| %>
-      <h2><%= link_to category.name, category_path(category.id)%></h2>
-      <img src=<%= category.icon %> />
-      <p>$<%= category.expenses.sum(:amount)%></p>
-      <%= button_to 'Delete', category, method: :delete, data: { turbo: false } %>
+    <br>
+    <div class='container d-flex flex-row justify-content-between p-3 align-items-center rounded shadow border-dark'>
+      <img src="<%= category.icon %>" alt=<%= category.name %>, class= 'img-fluid img-thumbnail w-25' />
+      <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-3' %></h2>
+      <p class='fw-semibold'>$<%= category.expenses.sum(:amount) %></p>
+      <%# <%= button_to 'Delete', category, method: :delete, data: { turbo: false } %>
+    </div>
     <% end %>
-  </div>
-<%end %>
+  <% end %>
+</div>
 <br>
-<%= link_to "Add New Category", new_category_path %>
-<%= render partial: 'shared/logout'%>
+<div class='d-flex flex-column fixed-bottom text-center w-100 p-3', style='background-color: #5fb523;'>
+  <%= link_to "Add New Category", new_category_path, class:'text-decoration-none text-white border border-white p-2 fs-5 fw-semibold', style:'background-color: #5fb523;' %>
+</div>

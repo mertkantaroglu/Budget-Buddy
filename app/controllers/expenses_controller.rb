@@ -1,12 +1,10 @@
 class ExpensesController < ApplicationController
-
   # GET /expenses/new
   def new
     @expense = Expense.new
     @categories = Category.all
     @category = Category.find(params[:category_id])
   end
-
 
   # POST /expenses or /expenses.json
   def create
@@ -18,7 +16,7 @@ class ExpensesController < ApplicationController
         category = Category.find(params[:expense][:category_id])
         @expense.categories << category
 
-        format.html { redirect_to category_path(id: params[:category_id]), notice: 'Expense created successfully.' }
+        format.html { redirect_to category_path(id: params[:category_id]) }
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -27,10 +25,9 @@ class ExpensesController < ApplicationController
     end
   end
 
-
   private
 
-    def expense_params
-      params.require(:expense).permit(:name, :amount, :category)
-    end
+  def expense_params
+    params.require(:expense).permit(:name, :amount, :category)
+  end
 end

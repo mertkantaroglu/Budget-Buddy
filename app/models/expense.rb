@@ -4,6 +4,6 @@ class Expense < ApplicationRecord
   has_many :category_expenses, dependent: :destroy
   has_many :categories, through: :category_expenses, dependent: :destroy
 
-  validates :name, presence: true, length: {in: 3..50}
+  validates :name, presence: true, length: { in: 3..50 }
   validates :amount, presence: true
 end

@@ -2,13 +2,18 @@
 
 <p style="color: green"><%= notice %></p>
 
-<div>
+<div class="cat-expense-container d-flex flex-column text-center bg-white p-1">
+<br>
   <% @category_expense.each do |expense| %>
-    <p>Name: <%= expense.name %></p>
-    <p>Amount: $<%= expense.amount %></p>
+  <div class='expense-container container d-flex flex-column p-3 mb-3 justify-content-center rounded shadow border-dark'>
+      <p>Name: <span class='fw-semibold'><%= expense.name%></span></p>
+      <p>Amount: <span class='fw-bold'>$<%= expense.amount %></span></p>
+    </div>
   <% end %>
 
-  <%= button_to "Delete this category", @category, method: :delete %>
+  <%# <%= button_to "Delete this category", @category, method: :delete %>
 
-  <%= link_to 'Add New Transaction', new_category_expense_path(@category) %>
+  <div class='d-flex flex-column fixed-bottom text-center w-100 p-3', style='background-color: #5fb523;'>
+    <%= link_to 'Add New Expense', new_category_expense_path(@category), class:'text-decoration-none text-white border border-white p-2 fs-5 fw-semibold', style:'background-color: #5fb523;'%>
+  </div>
 </div>
