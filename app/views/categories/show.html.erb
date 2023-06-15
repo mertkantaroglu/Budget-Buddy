@@ -1,10 +1,14 @@
+<%= render partial: 'shared/navbar', locals: { title: @category.name } %>
+
 <p style="color: green"><%= notice %></p>
 
 <div>
-  <h2><%= @category.name %></h2>
-  <h3><img src=<%= @category.icon %> /></h3>
-  <%= link_to "Back", categories_path %>
-  <br>
+  <% @category_expense.each do |expense| %>
+    <p>Name: <%= expense.name %></p>
+    <p>Amount: $<%= expense.amount %></p>
+  <% end %>
 
   <%= button_to "Delete this category", @category, method: :delete %>
+
+  <%= link_to 'Add New Transaction', new_category_expense_path(@category) %>
 </div>

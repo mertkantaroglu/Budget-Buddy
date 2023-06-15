@@ -1,0 +1,18 @@
+<%= render partial: 'shared/navbar', locals: {title: 'Add New Expense'}%>
+
+<br>
+
+<div>
+  <%= form_with model: @expense, url: category_expenses_path do |form| %>
+    <div>
+      <%= form.text_field :name, autofocus: true, placeholder: 'Enter expense name' %>
+      <%= form.text_field :amount, autofocus: true, placeholder: 'Enter amount'%>
+      <%= form.label :category_id, 'Select Categories: ' %>
+      <%= form.select :category_id, @categories.map { |category| [category.name, category.id] },{include_hidden: false},
+      {multiple: true, required: true} %>
+    </div>
+    <div>
+      <%= form.submit 'Add Expense' %>
+    </div>
+  <% end %>
+</div>

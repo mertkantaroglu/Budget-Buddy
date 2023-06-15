@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'splash#index'
 
   resources :users
-  resources :categories, only: [:index, :show, :new, :create, :destroy]
+  resources :categories, only: [:index, :show, :new, :create, :destroy] do
+    resources :expenses, only: [:new, :create, :destroy]
+  end
 end
