@@ -4,4 +4,6 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-Rails.application.credentials.decrypt if Rails.application.encrypted?
+if Rails.application.respond_to?(:encrypted?) && Rails.application.encrypted?
+  Rails.application.credentials.decrypt
+end
