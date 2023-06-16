@@ -5,6 +5,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [🚀 Live Demo](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites ](#prerequisites-)
     - [Setup ](#setup-)
@@ -48,6 +49,13 @@
 - **Create Category**
 - **Create Expense**
 - **Add Expense to Category**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo](https://bugdet-buddy.onrender.com/)<br>
+- [Video Presentation](https://www.loom.com/share/4b4dd6adb2b3445eb98259a252e9298c?sid=31dab33a-9fcc-4126-81cc-1e5df1e4898f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
