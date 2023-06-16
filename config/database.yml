@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: budget_buddy_production
-  username: postgres
-  password: ankara
+  url: <%= ENV['DATABASE_URL'] %>
