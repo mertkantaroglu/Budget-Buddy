@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url(../fonts/proximanova-bold.otf) format(opentype);
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url(../fonts/proximanova-light.otf) format(opentype);
+}
+
+html {
+  font-family: "Proxima Nova Light", sans-serif;
+  color: var(--text);
+}
+
 .name-container {
   margin: 8rem auto;
 }
@@ -22,7 +39,7 @@
   width: 60%;
 }
 
-.cat-expense-container {
+.cat-expense-container, .cat-container {
   margin-bottom: 5rem;
 }
 

@@ -1,6 +1,6 @@
 <%= render partial: 'shared/navbar', locals: { title: 'Categories'} %>
 
-<div id="categories" class="">
+<div id="categories" class="cat-container d-flex flex-column">
   <% if @categories.empty?%>
     <h3 class='no-cat text-center fw-bold'>No Category Available</h3>
   <% else %>

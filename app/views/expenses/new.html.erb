@@ -9,7 +9,7 @@
         <%= form.text_field :name, autofocus: true, placeholder: 'Enter expense name',class:'form-control' %>
       </div>
       <div class='expense-info'>
-        <%= form.text_field :amount, autofocus: true, placeholder: 'Enter amount',class:'form-control'%>
+        <%= form.number_field :amount, autofocus: true, placeholder: 'Enter amount',class:'form-control'%>
       </div>
       <div class='expense-info fw-medium'>
         <%= form.label :category_id, 'Select Categories: ' %>
