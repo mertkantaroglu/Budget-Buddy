@@ -32,7 +32,6 @@ class ExpensesController < ApplicationController
   #   redirect_to category_path(@category), notice: "Expense successfully deleted."
   # end
 
-
   private
 
   def expense_params
