@@ -37,15 +37,37 @@ html {
 
 .expense-container {
   width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 .cat-expense-container, .cat-container {
   margin-bottom: 5rem;
 }
 
-.expense-info, .category-info {
+.expense-info, .category-info{
   margin: 0.5rem auto;
-  width: 50%;
+  width: 60%;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  align-content: center;
+  width: 60%;
+}
+
+.container-info h2 {
+  flex: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-info p {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-select {
@@ -54,4 +76,67 @@ html {
 
 .no-cat {
   margin: 3rem auto 0;
+}
+
+.expense-info {
+  display: flex;
+  justify-content: center;
+}
+
+.expense-detail {
+  flex: 90%;
+}
+
+.expense-del-btn {
+  background-color: transparent;
+  color: red;
+  border: none;
+}
+
+.add-cat-btn, .add-exp-btn {
+  background-color: #5fb523;
+  color: white;
+}
+
+
+.add-cat-btn:hover, .add-exp-btn:hover {
+  background-color: white;
+  color: #5fb523;
+}
+
+.signout-btn {
+  text-decoration:none;
+  color:white;
+}
+
+.signout-btn:hover {
+  color:#3778c2;
+  background-color: white;
+  padding: 5px;
+}
+
+.signin-btn {
+  color:white;
+  background-color: #3778c2;
+}
+
+.signin-btn:hover {
+  color: #3778c2;
+  background-color: white;
+  border: 1px solid #3778c2;
+}
+
+.signup-btn {
+  color: #6c757d;
+  border: 3px solid #6c757d;
+}
+
+.signup-btn:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
 }

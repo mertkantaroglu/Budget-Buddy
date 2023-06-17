@@ -7,15 +7,17 @@
     <% @categories.each do |category| %>
     <br>
     <div class='container d-flex flex-row justify-content-between p-3 align-items-center rounded shadow border-dark'>
-      <img src="<%= category.icon %>" alt=<%= category.name %>, class= 'img-fluid img-thumbnail w-25' />
-      <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-3' %></h2>
-      <p class='fw-semibold'>$<%= category.expenses.sum(:amount) %></p>
-      <%# <%= button_to 'Delete', category, method: :delete, data: { turbo: false } %>
+      <img src="<%= category.icon %>" alt=<%= category.name %>, class= 'image img-fluid img-thumbnail' />
+      <div class='container-info'>
+        <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-3' %></h2>
+        <p class='fw-semibold'>$<%= category.expenses.sum(:amount) %></p>
+      </div>
+      <%= button_to 'Delete', category, method: :delete, data: { turbo: false }, class:'btn btn-outline-danger' %>
     </div>
     <% end %>
   <% end %>
 </div>
 <br>
 <div class='d-flex flex-column fixed-bottom text-center w-100 p-3', style='background-color: #5fb523;'>
-  <%= link_to "Add New Category", new_category_path, class:'text-decoration-none text-white border border-white p-2 fs-5 fw-semibold', style:'background-color: #5fb523;' %>
+  <%= link_to "Add New Category", new_category_path, class:'add-cat-btn text-decoration-none border border-white p-2 fs-5 fw-semibold' %>
 </div>
