@@ -1,0 +1,24 @@
+<%= render partial: 'shared/navbar', locals: { title: @category.name } %>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="cat-expense-container d-flex flex-column text-center p-1">
+<br>
+  <div class='expense-container d-flex flex-column container'>
+  <% @category_expense.each do |expense| %>
+    <div class='expense-info justify-content-center rounded shadow border-dark p-3 mb-2'>
+    <div class='expense-detail'>
+      <p>Name: <span class='fw-semibold'><%= expense.name%></span></p>
+      <p>Amount: <span class='fw-bold'>$<%= expense.amount %></span></p>
+      </div>
+      <%# <div> %>
+      <%# <%= button_to 'X', category_expense_path(expense), method: :delete, data: { turbo: false }, class: 'expense-del-btn' %>
+      <%# </div> %>
+    </div>
+  <% end %>
+  </div>
+
+  <div class='d-flex flex-column fixed-bottom text-center w-100 p-3', style='background-color: #5fb523;'>
+    <%= link_to 'Add New Expense', new_category_expense_path(@category), class:'add-exp-btn text-decoration-none border border-white p-2 fs-5 fw-semibold' %>
+  </div>
+</div>
